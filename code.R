@@ -841,9 +841,15 @@ nhs <- svy_design(dff, weights = "SumWt2y")
 svycoxph(Surv(permth_int, mortstat) ~ sex + age + eth1 + CKD_EPI_Scr_2009 + bmxwaist + bmi + DMnew + smoke + Hypertension +
   ASCVD + Hyperlipidemia + deltaage, nhs) %>% reg_table(round = 3)
 svycoxph(Surv(permth_int, mortstat) ~ sex + age + eth1 + CKD_EPI_Scr_2009 + bmxwaist + bmi + DMnew + smoke + Hypertension +
+             ASCVD + Hyperlipidemia + deltaage, nhs) |> cox.zph()
+svycoxph(Surv(permth_int, mortstat) ~ sex + age + eth1 + CKD_EPI_Scr_2009 + bmxwaist + bmi + DMnew + smoke + Hypertension +
   ASCVD + Hyperlipidemia + deltaageQ, nhs) %>% reg_table(round = 3)
 svycoxph(Surv(permth_int, mortstat) ~ sex + age + eth1 + CKD_EPI_Scr_2009 + bmxwaist + bmi + DMnew + smoke + Hypertension +
+             ASCVD + Hyperlipidemia + deltaageQ, nhs) |> cox.zph()
+svycoxph(Surv(permth_int, mortstat) ~ sex + age + eth1 + CKD_EPI_Scr_2009 + bmxwaist + bmi + DMnew + smoke + Hypertension +
   ASCVD + Hyperlipidemia + deltaageQ.median, nhs) %>% reg_table(round = 3)
+svycoxph(Surv(permth_int, mortstat) ~ sex + age + eth1 + CKD_EPI_Scr_2009 + bmxwaist + bmi + DMnew + smoke + Hypertension +
+             ASCVD + Hyperlipidemia + deltaageQ.median, nhs) |> cox.zph()
 
 # Forestplot----
 
